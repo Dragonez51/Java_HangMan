@@ -24,8 +24,6 @@ public class Ludzik implements ActionListener {
         String[] categories = categoriesPath.list();
         String[] words = new String[]{};
 
-        System.out.println(categoriesPath.getAbsolutePath());
-
         mainPanel.setBackground(new Color(100,100,100));
 
 //          MainFrame Part 1:
@@ -52,7 +50,6 @@ public class Ludzik implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 chosenCategory = comboBox.getSelectedItem().toString();
-//                System.out.println(comboBox.getSelectedItem().toString());
             }
         });
         ((JLabel) comboBox.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
