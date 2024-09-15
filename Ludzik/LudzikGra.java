@@ -223,21 +223,21 @@ public class LudzikGra implements KeyListener{
         for(int i=0; i<buttonTopPanel.getComponentCount();i++){
             JButton c = (JButton) buttonTopPanel.getComponent(i);
             String temp = String.valueOf(e.getKeyChar());
-            if(temp.toUpperCase().equals(c.getText())){
+            if(temp.toUpperCase().equals(c.getText())&&c.isEnabled()){
                 checkForHit(c, hasloGlob);
             }
         }
         for(int i=0; i<buttonMidPanel.getComponentCount();i++){
             JButton c = (JButton) buttonMidPanel.getComponent(i);
             String temp = String.valueOf(e.getKeyChar());
-            if(temp.toUpperCase().equals(c.getText())){
+            if(temp.toUpperCase().equals(c.getText())&&c.isEnabled()){
                 checkForHit(c, hasloGlob);
             }
         }
         for(int i=0; i<buttonBottomPanel.getComponentCount();i++){
             JButton c = (JButton) buttonBottomPanel.getComponent(i);
             String temp = String.valueOf(e.getKeyChar());
-            if(temp.toUpperCase().equals(c.getText())){
+            if(temp.toUpperCase().equals(c.getText())&&c.isEnabled()){
                 checkForHit(c, hasloGlob);
             }
         }
