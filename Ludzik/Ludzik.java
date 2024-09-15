@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 import java.awt.Color;
@@ -16,7 +15,7 @@ public class Ludzik implements ActionListener {
     JLabel pickCategory = new JLabel();
     JButton generate = new JButton();
 
-    String chosenCategory;
+    static String chosenCategory;
 
     Ludzik() {
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
@@ -80,14 +79,12 @@ public class Ludzik implements ActionListener {
                     Scanner reader2 = new Scanner(category);
                     while(reader2.hasNextLine()){
                         String word = reader2.nextLine();
-                        words[i] = word;
+                        words[i] = word.toUpperCase();
                         i++;
                     }
 
-                    LudzikGra ludzik = new LudzikGra(words[(int)(Math.random()*wordsNumber)]);
+                    new LudzikGra(words[(int)(Math.random()*wordsNumber)]);
 
-                } catch (FileNotFoundException ex) {
-                    ex.printStackTrace();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -101,6 +98,9 @@ public class Ludzik implements ActionListener {
         comboBox.setPreferredSize(new Dimension(300, 100));
         comboBox.setMaximumSize(comboBox.getPreferredSize());
         comboBox.setMinimumSize(comboBox.getPreferredSize());
+    }
+    public static String getCategory(){
+        return chosenCategory;
     }
     @Override
     public void actionPerformed(ActionEvent e) {
